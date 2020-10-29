@@ -1,0 +1,49 @@
+/*通过选择器，初始化*/
+/**{*/
+/*    margin: 0;*/
+/*    padding: 0;*/
+/*    list-style: none;*/
+/*}*/
+
+/*标签选择器*/
+
+/*p{*/
+/*    font-size: 50px;*/
+/*    font-family: "微软雅黑";*/
+
+/*}*/
+body{
+    font-family: "宋体";
+}
+
+/*id选择器*/
+#people{
+    font-size: 100px;
+    color: red;
+}
+
+/*class类选择器*/
+.sanguo{
+    color: blue;
+}
+
+/*属性选择器*/
+span[name="zhuxi"]{
+    color: aquamarine;
+}
+
+/*后代选择器*/
+/*后代可以是后1代，后2代.... 子元素，就是后面的第一代子元素*/
+/*dd ul{*/
+/*    color: blue;*/
+/*}*/
+
+/*直接后代，子元素*/
+dd>ul{
+    color: red;
+}
+
+/*并集选择器*/
+h1,h2{
+    color: aqua;
+}

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        #father{
+            width: 300px;
+            height: 600px;
+            margin-top: 100px;
+            background-color: #FF0000;
+            /*相对定位*/
+            /*相对定位，是相对于自己div的改变*/
+            position: relative;
+
+        }
+        #son{
+            /*决定定位*/
+            /*绝对定位是相对浏览器 ，会把标准的默认布局打乱  如果要以父元素进行绝对定位，要给父元素做相对定位*/
+            position: absolute;
+            top: 50px;
+            left: 50px;
+            right: 50px;
+            bottom: 50px;
+            width: 200px;
+            height: 500px;
+
+            background-color: #2b542c;
+        }
+        #circle{
+
+            width: 200px;
+            height: 200px;
+            border-radius: 120px;  //100px
+            /*如果有边框 要加上边框长度*/
+            background-color: #0000FF;
+            margin-top: 50px;
+            position: absolute;
+            top: 40px;
+            left: 40px;
+            border: 20px solid red;
+        }
+        /*实现半圆*/
+        #circle2{
+            width: 100px;
+            height: 50px;
+            /*border-radius: 100px;*/
+            border-top-left-radius: 100px;
+            border-top-right-radius: 100px;
+            background-color: #0f0f0f;
+            margin-top: 50px;
+        }
+        /*实现4/1的圆*/
+        #circle3{
+            width: 50px;
+            height: 50px;
+            /*border-radius: 100px;*/
+            border-top-left-radius: 100px;
+            background-color: #0f0f0f;
+            margin-top: 50px;
+        }
+        /*只保留对角*/
+        #circle4{
+            width: 100px;
+            height: 100px;
+            /*border-radius: 100px;*/
+            border-top-left-radius: 100px;
+            border-bottom-right-radius: 100px;
+            background-color: #0f0f0f;
+            margin-top: 50px;
+        }
+        /*指定x，y轴的边框半径*/
+        #circle5{
+               width: 100px;
+               height: 100px;
+               /*前100px,后100px，坐标轴的意思 */
+               /*前面是x轴的左上角，右上角，右下角，左下角的大小   后面是y轴的....*/
+               border-radius: 80px 80px 80px 80px / 100px 100px 80px 80px ;
+               background-color: #0f0f0f;
+               margin-top: 50px;
+           }
+        /*实现box-shadow属性*/
+        #circle6{
+            width: 50px;
+            height: 50px;
+            /*前100px,后100px，坐标轴的意思 */
+            /*前面是x轴的左上角，右上角，右下角，左下角的大小   后面是y轴的....*/
+            border-top-left-radius: 100px;
+            background-color: #0ff;
+            margin-top: 30px;
+            /*  x轴偏移 y轴偏移 阴影模糊半径  阴影扩展半径 阴影颜色 投影方式（insert、outset（可选属性） ） */
+            box-shadow: 20px 20px 10px 5px orange,40px 40px 20px 10px red;
+        }
+        #angle{
+            margin-top: 20px;
+            position: relative;
+            width: 500px;
+            height: 500px;
+            background-color: yellow;
+        }
+
+        #test{
+            /*绝对定位，清楚原来的流布局，相对于浏览器的效果*/
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 400px;
+            height: 500px;
+            background-color: rebeccapurple;
+        }
+    </style>
+</head>
+
+<body>
+<div id="father">A
+    <div id="son">B</div>
+</div>
+
+<div id="angle">
+    <div id="circle"></div>
+</div>
+
+<div id="test">
+</div>
+
+<div id="circle2"></div>
+
+<div id="circle3"></div>
+
+<div id="circle4"></div>
+
+<div id="circle5"></div>
+
+<div id="circle6"></div>
+</body>
+</html>

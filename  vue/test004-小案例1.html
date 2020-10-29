@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script type="text/css"></script>
+</head>
+<body>
+<div id="app" align="center">
+    <button v-on:click="sub">-</button>
+    <span>{{num}}</span>
+    <button @click="add">+</button>
+</div>
+<!--el:是设置挂载点  data：设置数据   methods：设置的是方法
+v-on：可以简单写成@
+-->
+<script>
+    var app = new Vue({
+        el:"#app",
+        data:{
+            num:"1"
+        },
+        methods:{
+            add:function () {
+                if(this.num<10){
+                    this.num++;
+                }else {
+                    alert("max num");
+                }
+            },
+            sub:function () {
+                if (this.num>0){
+                    this.num--;
+                }else {
+                    alert("min num");
+                }
+            }
+        }
+    })
+</script>
+</body>
+</html>

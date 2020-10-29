@@ -1,0 +1,17 @@
+#about dl dt{
+    font-size: 30px;
+    margin: 8px;
+}
+#about dl dd{
+    font-size: 19px;
+    margin: 8px;
+}
+#about{
+    background-color: snow;
+}
+#text{
+    /*background-image: url("/img/search.png");*/
+    border-color: #FF0000;
+    /*background-repeat: no-repeat;*/
+
+}

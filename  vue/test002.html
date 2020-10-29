@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script type="text/css"></script>
+</head>
+<body>
+<!--快速复制上一行 cmd+d-->
+<div id="app2">
+    {{message}}
+    <p>{{message}}</p>
+    <h1>{{student.name}}</h1>
+    <h2>{{student.age}}</h2>
+    <ol>
+        <li>{{school[0]}}</li>
+        <li>{{school[1]}}</li>
+        <li>{{school[2]}}</li>
+    </ol>
+</div>
+<script>
+    var app = new Vue({
+        el: "#app2",
+        data: {
+            message: "你好孙昀",
+            student: {
+                name: "孙昀",
+                age: "22",
+                sex: "男"
+            },
+            school: ["玉山一中", "井冈山大学", "南昌大学"]
+        }
+    });
+</script>
+</body>
+</html>

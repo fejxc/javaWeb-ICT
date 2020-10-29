@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style type="text/css">
+    *{
+        text-align: center;
+    }
+    .left,.right,.center{
+        float: right;
+    }
+    .footer{
+        clear: both;
+    }
+    .left{
+        width: 100px;
+        margin-right: -100px;
+        position: relative;
+        left: -100px;
+    }
+    .right{
+        width: 100px;
+        margin-right: -100%;
+        position: relative;
+        right: -100px;
+    }
+    .center{
+        width: 100%;
+    }
+    .content{
+        padding: 0 100px;
+    }
+</style>
+<body>
+<header class="header" style="background: #8a6d3b">头部</header>
+<div class="content">
+    <div class="center" style="background: #FF0000">主</div>
+    <div class="right" style="background: #2aabd2" >右</div>
+    <div class="left" style="background: #8a6d3b">左</div>
+</div>
+<footer class="footer" style="background: #1b6d85">底部</footer>
+</body>
+</html>
