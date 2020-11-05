@@ -15,3 +15,41 @@
     /*background-repeat: no-repeat;*/
 
 }
+#siteNav .navbar-right li .siteNavPanel{
+    width: 128px;
+    background-color: #fff;
+    border: 1px solid;
+    display: none;
+    position: absolute; /*设置绝对定位*/
+}
+#siteNav .navbar-right li .siteNavPanel li a{
+    height: 40px;
+    width: 50px;
+    line-height: 30px;
+    padding: 2px 0 2px 5px;
+}
+#siteNav .navbar-right li .siteNavPanel li a:hover{
+    color: red;
+    text-decoration: none;
+}
+
+i.downUp{
+/*    鼠标移除时候，显示down.gif*/
+    background: url("../img/down.gif");
+    width: 15px;
+    height: 10px;
+    display: inline-block;
+}
+li.current i.downUp{
+    /*添加current*/
+    display: inline-block;
+    background: url("../img/up.gif") no-repeat 0 0;
+    width: 15px;
+    height: 10px;
+    display: inline-block;
+}
+li.current{
+    background-color: #fff;
+    border: 1px solid #f0f0f0;
+    border-bottom: 1px solid #fff;
+}
