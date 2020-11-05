@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        //基本数据类型
+        var num=1;
+        var str = "heoll";
+        var flag = true; //逻辑类型 布尔
+
+        //特殊类型
+        var emp =null; //空
+        var ind = undefined;  //没定义
+
+        testOne(); //常用于页面初始化
+        //复杂类型
+        function testOne() {
+           // alert("hhhhh");
+            console.log("testOne");
+        }
+
+        var arr = ["1","2","3"];
+        var arr2 = new Array(); //数组类型
+
+        //数据库的类型是Json
+        var json = {"username":"花花","age":23,"sex":"男"}  //json
+        var obj = {username:"李四",age:22,sex:"男"};  //对象
+        console.log(obj.username);
+        console.log(json.username);
+
+        //注释语句
+        //html: <!-- -->
+        //css: /*  */
+        //js: /*   */  或者  //
+
+        //js数据类型的转化
+        //自动转换，语句中存在加号'+'，运算符，会把对应的num类型转换成字符串
+        var x = "15" + 5 ;
+        console.log(x);  // 输出155 ，自动拼接
+        var y = "15" -5 ;   // (* / +)除+号以外
+        console.log(y);  //10
+        //强制转换
+        var z = eval("15") +5 ;  //15强制转换成number类型
+        var z1 = parseInt("15") + 5 ;  //parseInt parseFloat  eval
+        console.log(z1);
+        console.log(z);  //20
+
+    </script>
+
+</body>
+</html>
