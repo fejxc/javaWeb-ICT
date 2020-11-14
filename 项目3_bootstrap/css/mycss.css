@@ -53,3 +53,79 @@ li.current{
     border: 1px solid #f0f0f0;
     border-bottom: 1px solid #fff;
 }
+
+/*轮播图*/
+.categoryAndBanner{
+    position: relative;
+    width: 100%;
+    height: 500px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.banner,.full_screen{
+    width: 100%;
+    height: 481px;
+    position: relative;
+    z-index: 1;
+}
+/*图片在中间显示*/
+.full_screen li{
+    width: 1920px;
+    height: 100%;
+    position: absolute;
+    z-index: 1;
+    top:0;
+    left: 50%;
+    margin-left: -960px;
+    display: none;
+}
+/*图片翻页小圆点*/
+.banner .slider-nav{
+    font-size: 1px;
+    list-style: none;
+    /*background: rgba(255,255,255,0.2);*/
+    text-align: center;
+    display: block;
+    width: 1190px;
+    height: 24px;
+    padding: 7px 8px;
+    margin-left: -595px;
+    position: absolute;
+    left: 50%;
+    bottom: 0px;
+    z-index: 2;
+}
+/*图片翻页小圆点样式设置*/
+.banner .slider-nav li{
+    /**/
+    vertical-align: top;
+    letter-spacing: normal;
+    word-spacing: normal;
+    /*让1，2，3，4，5 在同一行 内联块状 */
+    display: inline-block;
+    list-style: none;
+    margin-left: 4px;
+    overflow: hidden;
+    bottom: 0px;
+    z-index: 2;
+/*    圆形*/
+    width: 24px;
+    height: 24px;
+    border-radius: 12px;
+    /*黑色 透明度0.25*/
+    background: rgba(0,0,0,0.25);
+}
+.banner .slider-nav a{
+    display: block;
+    width: 100%;
+    height: 100%;
+    /*text-indent 使a中的文字不显示*/
+    text-indent: -99999px;
+    padding: 0;
+    margin: 0;
+}
+/*鼠标悬停在小圆点上，li上有class 为 on 的属性 背景为红色*/
+.banner .slider-nav li.on{
+    background: #FF0000;
+}
+
