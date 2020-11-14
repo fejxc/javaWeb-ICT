@@ -21,12 +21,13 @@
     border: 1px solid;
     display: none;
     position: absolute; /*设置绝对定位*/
+    list-style: none;
 }
 #siteNav .navbar-right li .siteNavPanel li a{
     height: 40px;
     width: 50px;
     line-height: 30px;
-    padding: 2px 0 2px 5px;
+    padding: 0px 4px 0px 4px;
 }
 #siteNav .navbar-right li .siteNavPanel li a:hover{
     color: red;
