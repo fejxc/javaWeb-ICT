@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>绝对定位</title>
+    <style>
+        .p1{
+            background-color: #2aabd2;
+            width: 80px;
+            height: 80px;
+
+        }
+        .p2{
+            background-color: #f0ad4e;
+            width: 80px;
+            height: 80px;
+        }
+        .p3{
+            background-color: #3c763d;
+            width: 80px;
+            height: 80px;
+        }
+        .p4{
+            background-color: #0000FF;
+            width: 80px;
+            height: 80px;
+            position: absolute;
+            top: 30px;
+            right: 20px;
+        }
+        .d1{
+            position: relative;
+            width: 200px;
+            height: 600px;
+            background-color: #8a6d3b;
+        }
+        .d2{
+            position: relative;
+            width: 160px;
+            height: 550px;
+            background-color: yellow;
+        }
+        .d3{
+            width: 130px;
+            height: 400px;
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+<div class="d1">
+    <div class="d2">
+        <div class="d3">
+            <div class="p1"><p>1</p></div>
+            <div class="p2"><p>2</p></div>
+            <div class="p3"><p>3</p></div>
+            <div class="p4"><p>4</p></div>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>
