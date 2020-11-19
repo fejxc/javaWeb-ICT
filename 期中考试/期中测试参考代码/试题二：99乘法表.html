@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>99乘法表</title>
+		<style type="text/css">
+			td{
+				color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- HTML代码 -->
+		<script type="text/javascript">
+			document.write("<table border='1' cellspacing='5'>")
+			for (var i = 1; i < 10; i++) {
+				document.write("<tr>");
+				for(var j=1;j<=i;j++){
+					document.write("<td>"+j + "*" + i + "=" + j*i +"</td>");
+				}
+				document.write("</tr>");
+			}
+			document.write("</table>");
+		</script>
+		<!-- <script type="text/javascript">
+			document.write("<br />")
+			document.write("<table border='1'>")
+			for (var i = 9; i > 0; i--) {
+				document.write("<tr>");
+				for(var j=1;j<=i;j++){
+					document.write("<td>"+j + "*" + i + "=" + j*i +"</td>");
+				}
+				document.write("</tr>");
+			}
+			document.write("</table>");
+		</script> -->
+		<script>
+			var num = 10;
+			var sum = 0;
+			var i = 0;
+			while(i <= num){				
+				sum += i;
+				i++;								
+			}
+			document.write("0加到10总共等于"+sum);
+		</script>
+	</body>
+</html>

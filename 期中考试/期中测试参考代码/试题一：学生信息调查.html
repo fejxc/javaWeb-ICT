@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>HTML表格</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		
+		.tdFirst{
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<table border="1" cellspacing="0">
+		<tr>
+			<th colspan="4">学生信息调查</th>
+		</tr>
+		<tr>
+			<td class="tdFirst">姓名：</td>
+			<td><label><input type="text" placeholder="请输入姓名" name=""></label></td>
+			<td class="tdFirst">电子邮件：</td>
+			<td><label><input type="email" placeholder="请填写电子邮件" name=""></label></td>
+		</tr>
+		<tr>
+			<td class="tdFirst">性别：</td>
+			<td>
+				男<label><input type="radio" checked="checked" name="sex"></label>
+				女<label><input type="radio" name="sex"></label>
+			</td>
+			<td >兴趣爱好</td>
+			<td>
+				羽毛球<label><input type="checkbox" name="" checked="checked"></label>
+				篮球<label><input type="checkbox" name="" checked="checked"></label>
+				看电影<label><input type="checkbox" name=""></label>
+				旅行<label><input type="checkbox" name=""></label>
+			</td>
+		</tr>
+		<tr>
+			<td class="tdFirst">最喜欢的国家:</td>
+			<td>
+				<select>
+					<option selected="selected">中国</option>
+					<option>美国</option>
+					<option>英国</option>
+					<option>加拿大</option>
+				</select>
+			</td>
+			<td class="tdFirst">籍贯：</td>
+			<td>
+				<select size="1">
+					<optgroup label="广东" >
+						<option>广州</option>
+						<option>深圳</option>
+					</optgroup>
+					<optgroup label="江西">
+						<option>南昌</option>
+						<option>吉安</option>
+					</optgroup>
+					<optgroup label="西藏">
+						<option>拉萨</option>
+						<option>昌都</option>
+					</optgroup>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td>上传你的生活照</td>
+			<td colspan="3"><label><input type="file" name=""></label></td>
+		</tr>
+		<tr>
+			<td>你在大学里的生活</td>
+			<td colspan="3">
+				<textarea placeholder="说几句..." cols="30" rows="3"></textarea>
+			</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td colspan="3">
+				<label><input type="submit" value="提交" name=""></label>
+				<label><input type="reset" value="重置" name=""></label>
+			</td>
+		</tr>
+	</table>
+</body>
+</html>

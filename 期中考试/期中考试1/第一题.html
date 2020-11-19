@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>学生信息调查</title>
+    <style type="text/css"></style>
+</head>
+<body>
+<div align="center">
+<form action="#" style="align-content: center;">
+   <table border="1px" cellpadding="0">
+       <thead>
+       <tr>
+           <th colspan="4">产学生信息调查</th>
+       </tr>
+       </thead>
+       <tbody>
+            <tr>
+                <td>姓名：</td>
+                <td><input type="text" name="name" placeholder="请输入姓名"></td>
+                <td>电子邮件：</td>
+                <td><input type="text" name="email" placeholder="情填写电子邮件"></td>
+            </tr>
+            <tr>
+                <td>性别：</td>
+                <td>
+                    男<input type="radio" name="pay" checked="checked">
+                    女<input type="radio" name="pay">
+
+                </td>
+                <td>兴趣爱好:</td>
+                <td>
+                    羽毛球<input type="checkbox" name="" checked="checked">
+                    篮球<input type="checkbox" name="" checked="checked">
+                    看电影<input type="checkbox" name="">
+                    旅行<input type="checkbox" name="">
+                </td>
+            </tr>
+            <tr>
+                <td>最喜欢的国家：</td>
+                <td>
+                    <select>
+                        <option>中国</option>
+                        <option>日本</option>
+                        <option>美国</option>
+                    </select>
+                </td>
+                <td>籍贯</td>
+                <td>
+                    <select>
+                        <optgroup label="广东">
+                            <option>广州</option>
+                            <option>深圳</option>
+                        </optgroup>
+                        <optgroup label="江西">
+                            <option>南昌</option>
+                            <option>吉安</option>
+                        </optgroup>
+                        <optgroup label="西藏">
+                            <option>拉萨</option>
+                            <option>昌都</option>
+                        </optgroup>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>上传你的生活照</td>
+                <td colspan="3">
+                    <input type="file" name="">
+                </td>
+            </tr>
+            <tr>
+                <td>你在大学里的生活</td>
+                <td colspan="3">
+                    <textarea rows="10" placeholder="说几句..."></textarea>
+                </td>
+            </tr>
+       </tbody>
+       <tfoot>
+            <tr>
+                <td></td>
+                <td colspan="3">
+                    <input type="reset" value="重置" name="">
+                    <input type="submit" value="提交" name="">
+                </td>
+            </tr>
+       </tfoot>
+   </table>
+</form>
+</div>
+</body>
+</html>

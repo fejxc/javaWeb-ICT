@@ -1,0 +1,16 @@
+*{
+    list-style: none;
+}
+.biaoqian .toubu .biaoti li{
+    display: inline-block;
+    border: 1px solid;
+}
+.biaoqian{
+    text-align: center;
+}
+.biaoqian .change .toubu .biaoti li a{
+    display: inline-block;
+    border: 1px solid;
+    color: #FF0000;
+    background: #FF0000;
+}

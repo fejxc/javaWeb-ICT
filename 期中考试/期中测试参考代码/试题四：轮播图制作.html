@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>轮播图</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		#content{margin: 100px auto;width: 800px;height: 450px;position: relative;}
+		#banner li img{width: 800px;height: 450px;}
+		#banner li{display: none;}
+
+		#radus{position: absolute;left: 45%;bottom: 0;}
+		#radus li{width: 24px;height: 24px;border-radius: 12px;display: inline-block;margin-right: 5px;background: rgba(0,0,0,0.5);}
+		#radus li a{text-decoration: none;text-indent:-9999px;margin: 0;padding: 0;display: block;width: 100%;height: 100%;}
+		#radus .on{background: #ff0000;}
+		#left{position: absolute;left: 70px;top: 50%; border: 10px solid rgba(0,0,0,-0.1);border-right-color:#F00; }
+		#right{position: absolute;right: 20px;top: 50%; border: 10px solid rgba(0,0,0,-0.1);border-left-color:#F00; }
+		/*三角形制作*/
+		#border{
+			/*width: 100px;*/
+			/*height: 100px;*/
+			/*border-top: 100px solid red;*/
+			/*border-bottom: 100px solid yellow;*/
+			border: 10px solid rgba(0,0,0,-0.1);
+			border-right-color:red;
+		}
+	</style>
+</head>
+<body>
+	<div id="content">
+		<ul id="banner">
+			<li style="display: block;"><img src="img/banner/banner1.jpg"></li>
+			<li><img src="img/banner/banner2.jpg"></li>
+			<li><img src="img/banner/banner3.jpg"></li>
+			<li><img src="img/banner/banner4.jpg"></li>
+		</ul>
+		<ul id="radus">
+			<li class="on"><a href="JavaScript:void(0)">1</a></li>
+			<li><a href="JavaScript:void(0)">2</a></li>
+			<li><a href="JavaScript:void(0)">3</a></li>
+			<li><a href="JavaScript:void(0)">4</a></li>
+		</ul>
+		<div id="left"></div>
+		<div id="right"></div>
+	</div>
+	<div id="border"></div>
+
+	<script type="text/javascript">
+
+		var banner = document.getElementById("banner");
+		var bannerLi = banner.getElementsByTagName("li");
+
+		var radus = document.getElementById("radus");
+		var radusLi = radus.getElementsByTagName("li");
+
+		var left = document.getElementById("left");
+		var	right = document.getElementById("right");
+
+		var flag = 0;
+		var y = 0;
+		//实现鼠标悬停时切换焦点图
+		window.onload = function(){			
+			for(var i=0;i < radusLi.length;i++){
+				radusLi[i].index = i;
+				radusLi[i].onmouseover = function(){
+					for(var j=0;j<radusLi.length;j++){
+						radusLi[j].setAttribute("class","");
+					}
+					this.setAttribute("class","on");
+
+					for(var i=0;i<bannerLi.length;i++){
+						bannerLi[i].style.display = "none";
+					}
+					bannerLi[this.index].style.display = "block";
+				}
+			}
+
+			//计时事件切换焦点图
+			window.setInterval(function(){change()},2000);
+			function change(){
+				if (flag == radusLi.length) { flag = 0;}
+				radusLi[flag].index = flag;
+				console.log("radusLi[flag]= "+radusLi[flag]);
+				for(var i=0;i<radusLi.length;i++){
+					radusLi[i].setAttribute("class","");
+				}
+				radusLi[flag].className = "on";
+
+				for(var i=0;i<bannerLi.length;i++){
+					bannerLi[i].style.display = "none";
+				}
+				bannerLi[flag].style.display = "block";
+				flag++;
+			}
+
+			//点击向右箭头切换焦点图
+			right.onclick = function(){
+				for(var j=0;j<radusLi.length;j++){
+					radusLi[j].setAttribute("class","");
+				}
+				for(var i=0;i<bannerLi.length;i++){
+					bannerLi[i].style.display = "none";
+				}
+				if (y == radusLi.length - 1) {
+					radusLi[0].setAttribute("class","on");
+					bannerLi[0].style.display = "block";
+					y = -1;
+				}else{
+					radusLi[y+1].setAttribute("class","on");
+					bannerLi[y+1].style.display = "block";
+				}
+				y++;				
+			}
+
+			//点击向左箭头切换焦点图
+			left.onclick = function(){
+				for(var j=0;j<radusLi.length;j++){
+					radusLi[j].setAttribute("class","");
+				}
+				for(var i=0;i<bannerLi.length;i++){
+					bannerLi[i].style.display = "none";
+				}
+				if (y == 0) {
+					radusLi[radusLi.length-1].setAttribute("class","on");
+					bannerLi[radusLi.length-1].style.display = "block";
+					y = 4;
+				}else{
+					radusLi[y-1].setAttribute("class","on");
+					bannerLi[y-1].style.display = "block";
+				}
+				y--;
+			}			
+		}
+		
+	</script>
+</body>
+</html>
