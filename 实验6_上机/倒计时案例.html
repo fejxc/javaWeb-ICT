@@ -3,13 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <title>距离元旦</title>
+    <style type="text/css">
+        span{
+            color: #FF0000;
+            font-size: 40px;
+        }
+        p{
+            font-size: 40px;
+        }
+        div{
+            position: relative;
+            left: 500px;
+            top: 200px;
+        }
+    </style>
 </head>
 <body>
-    <p>距离元旦还有：</p>
-
+    <div>
+        <h1>距离元旦还有：</h1>
+        <p></p>
+    </div>
     <script type="text/javascript">
         function tow(n) {
-            return n>0 && n<10 ? n = "0"+n : n = n;
+            return n>0 && n<10 ? n = "0"+n : "" + n;
         }
         function getDate() {
             var p = document.getElementsByTagName("p")[0];
@@ -25,9 +41,9 @@
             second= second % 3600;  //剩下的秒数
             var minute = Math.floor(second/60);
             second=second%60;
-
-            p.innerHTML="距离元旦还有："+day+"天"+hour+"时"+minute+"分"+second+"秒";
-            console.log(day);
+            p.innerHTML="<span>"+tow(day)+"</span>"+"天"+"<span>"+tow(hour)+"</span>"+"时"+
+                "<span>"+tow(minute)+"</span>"+"分"+"<span>"+tow(second)+"</span>"+"秒";
+           // console.log(day);
         }
         getDate();
         setInterval(getDate,1000);
