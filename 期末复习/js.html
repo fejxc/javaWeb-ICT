@@ -11,6 +11,44 @@
     <button onclick="changePicApple()">切换phone</button>
 </div>
 
+<div>
+    <h1>JavaScript 计时事件 SetInterval、SetTimeOut</h1>
+<!--    SetInterval()方法：间隔指定的毫秒数后不停地(重复)执行指定的代码；
+SetTimeOut()方法：在指定的毫秒数后执行指定代码；-->
+    <pre>
+        <span style="color: red;font-size: 30px;" id="pre1">
+            SetInterval()方法：间隔指定的毫秒数后不停地(重复)执行指定的代码；
+            SetTimeOut()方法：在指定的毫秒数后执行指定代码；
+        </span>
+    </pre>
+    <button onclick="fun1()">你敢点我吗？2s后原地不停的爆炸</button> &nbsp;
+    <button onclick="fun2()">你敢点我吗？3s后原地的爆炸一次</button> &nbsp;
+    <button onclick="fun3()">点我我，上面字体红色会变蓝色哦</button> &nbsp;
+    <button onclick="fun4()">点我我，上面字体会恢复红色哦</button> &nbsp;
+
+</div>
+
+<script>
+    function fun1(){
+        setInterval(function () {
+            alert("bobobobobobo....");
+        },2000);
+    };
+    //1000毫秒 等于1s
+    function fun2(){
+        setTimeout(function () {
+            alert("bobobobobobo....");
+        },3000);
+    };
+    function fun3(){
+        var pre1 = document.getElementById("pre1");
+        pre1.style.color="blue";
+    }
+    function fun4(){
+        var pre1 = document.getElementById("pre1");
+        pre1.style.color="red";
+    }
+</script>
 <script>
     function changePic(){
         var apple = document.getElementById("apple");
