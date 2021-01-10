@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Jquery</title>
+    <style>
+        .big-size{width: 400px;}
+        .normal-size{width: 250px;}
+        .small-size{width: 200px;}
+        .default-size{width: 250px;}
+    </style>
+<!--    引入js要在调用js之前 ，不然会报错     -->
+<!--    <script type="text/javascript" src="js/jquery-3.1.1.js"></script>-->
+    <script type="text/javascript" src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+
+</head>
+<body>
+
+<div>
+    <h1>jQuery采用事件改变元素的样式</h1>
+    <!--照片放大放小-->
+    <img src="https://gitee.com/fejxc/upic-file/raw/master/Users/sunyun/blog_pic /0SnUg9.png" id="BigSurImg" class="default-size">
+    <button id="big">放大</button>
+    <button id="normal">正常</button>
+    <button id="small">缩小</button>
+</div>
+
+<div onclick='alert("div");'>
+    <h1>事件冒泡和默认行为</h1>
+    <ul onclick='alert("ul");'>
+        <a href="http://baidu.com" target="_blank" onclick='alert("li");' id="inner">事件冒泡</a>
+    </ul>
+</div>
+
+<div>
+    <a href="#">点我会感觉刷新一下哦</a> &nbsp;&nbsp;
+    <a href="javascript:void(0)">点我感觉不到刷新一下哦</a>
+</div>
+
+<div>
+    <h1>库存的增加减少</h1>
+    <dl>
+        <dt>购买数量：</dt>
+        <dd>
+            <a href="javascript:void(0)" class="minus">
+                <i>-</i>
+            </a>
+            <input type="text" name="num" id="number" value="5">
+            <a href="javascript:void(0)" class="plus">
+                <i>+</i>
+            </a>
+            <em>
+                （当前库存
+                <strong  class="max">10</strong>
+                ）
+            </em>
+        </dd>
+    </dl>
+</div>
+
+<script>
+    //根据库存值，来设置前面的输入文本框的值
+    $(document).ready(function(){
+        //减
+        $(".minus").on('click',function(){
+            var number = $("#number").val();
+            if(number > 1){
+                number--;
+                $("#number").val(number);
+            }else {
+                alert("至少要购买一件哦！！！");
+            }
+        });
+//加
+        $(".plus").on('click',function(){
+            var number = $("#number").val();
+            var max = $(".max").text();//提取最大库存
+            if(number < parseInt(max)){ //将字符串转化为数字
+                number++;
+                $("#number").val(number);
+            }else{
+                alert("购买数量已超过最大库存啦！！！");
+            }
+        });
+    });
+</script>
+
+<script>
+    $(document).ready(function () {
+        $("#inner").on("click",function () {
+            alert("aaaaaaa");
+            //阻止事件冒泡行为
+            event.stopPropagation();
+            //阻止默认行为,点击a标签后不会跳转到百度
+            event.preventDefault();
+        })
+    })
+</script>
+<script>
+    // jQuery采用事件改变元素的样式
+    $(document).ready(function () {
+        $("#big").on("click",function () {
+            console.log("放大图片成功啦");
+            //链式编程
+            $("#BigSurImg").removeClass().addClass("big-size");
+        });
+        $("#normal").click(function () {
+            console.log("恢复正常大小啦");
+            $("#BigSurImg").removeClass();
+            $("#BigSurImg").addClass("normal-size");
+        })
+        //one只会触发一次
+        $("#small").one("click",function () {
+            console.log("缩小大小啦");
+            $("#BigSurImg").removeClass();
+            $("#BigSurImg").addClass("small-size");
+        })
+    })
+</script>
+
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--#d7d7d7 灰色
+#ffffff 白色
+-->
+<table width="300px"  cellspacing="1" cellpadding="0" bgcolor="#d7d7d7" style="text-align: center">
+    <caption>练习</caption>
+    <tr>
+        <th bgcolor="#ffffff" colspan="2">会员级别</th>
+    </tr>
+    <tr>
+        <td bgcolor="#ffffff">金卡</td>
+        <td bgcolor="#ffffff" rowspan="2">200</td>
+    </tr>
+    <tr>
+        <td bgcolor="#ffffff">svip卡</td>
+    </tr>
+</table>
+<div>
+<!-- http:// 不能少   -->
+    <a href="http://fejxc.top" target="_blank" title="fejxc的博客" id="blog">博客</a>
+<!--    _blank新窗口  _self本窗口 （默认）  -->
+    <a href="http://www.baidu.com" target="_blank">百度</a>
+    <a href="http://www.baidu.com" target="_self">百度2</a>
+    <a href="mailto:1031364436@qq.com" target="_self">邮箱联系</a>
+
+</div>
+
+<!--img-->
+<div>
+<!--    title 是鼠标移动到图片到提示， alt是 404 找不到图片后的提示-->
+    <img src="https://gitee.com/fejxc/upic-file/raw/master/Users/sunyun/blog_pic /Si7bNs.png"
+         alt="show alt 404 才有我哦 " title="title" border="2px">
+</div>
+<!--input-->
+<div>
+    <input type="radio" name="sex">男
+    <input type="radio" name="sex" checked="checked">女<br/>
+    爱好：<input type="checkbox" name="movie" checked="checked"> 电影
+        <input type="checkbox" name="movie2"> 电视剧
+        <input type="checkbox" name="movie3"> 音乐<br>
+<!--  placeholder html5新增  -->
+    用户名：<input type="text" name="name" placeholder="请输入用户名"><br>
+    密码：<input type="password" name="pwd" placeholder="请输入密码"><br>
+    生日：<input type="date"><br>
+    时间：<input type="time"><br>
+    <button type="submit">提交</button>
+    <button type="reset" value="">重置</button>
+
+</div>
+<div>
+    <a href="#blog">回到博客</a>
+</div>
+
+<!--多媒体-->
+<div>
+<!--    滚动-->
+    <marquee>hhhh</marquee>
+<!--    视频-->
+    <video controls >
+        <source src="https://www.bilibili.com/video/BV1ea411c7te">
+    </video>
+<!--音乐-->
+    <audio controls>
+        <source src="" type="audio/mpeg">
+    </audio>
+    <!--背景音乐-->
+    <embed src="">
+</div>
+
+<script>
+    var x = 30 + eval("3");
+    var x2 = "dddd" + 4 ;
+    console.log(x2);
+    console.log("x="+x);
+    var y = 30 / "3";
+    var y2 = 30 * "3";
+    console.log(y);
+    console.log(y2);
+    var t = "17" , t1 = 17;
+    console.log(t==t1);
+    console.log(t===t1);
+
+</script>
+</body>
+</html>
