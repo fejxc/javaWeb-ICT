@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>HTML5 新标签</title>
+	<meta charset="utf-8">
+</head>
+<body>
+	<!-- 1、画布：canvas -->
+	<h4>1.1 画布：线段</h4>
+	<canvas id="CanvasOne" ></canvas>
+	<h4>1.2 画布：三角形</h4>
+	<canvas id="CanvasTwo" ></canvas>
+	<h4>1.3 画布：画段圆弧</h4>
+	<canvas id="CanvasThree" ></canvas>
+
+	<!-- 2、meter对象 -->
+	<h4>2 meter对象</h4>
+	<meter id="myMeter" max="100" min="0" value="0" high="90" low="10"></meter>
+	<button id="yes">支持</button>
+	<button id="no">不支持</button>
+
+	<!-- 3  进度条：progress -->
+	<h4>3  进度条：progress</h4>
+	<div>
+		<span id="loading">loading...</span>	
+		<progress value="0" max="100"></progress>
+		<span id="fen">0</span>%
+	</div>
+
+	<script type="text/javascript" src="js/jquery-3.1.1.js"></script>
+	<script type="text/javascript">
+		function draw(){
+			var canvas_1 = document.getElementById("CanvasOne");
+			if (!canvas_1.getContext) {return;}
+			// 获取2d上下文对象
+			var ctx_1 = canvas_1.getContext("2d");
+			// ctx.fillStyle = "rgb(200,0,0)";	//填充颜色
+			// ctx.fillRect(10,10,55,50);	//fillRect(x,y,width,height)：绘制一个填充的矩形
+			// ctx.strokeRect(10,70,100,50);//strokeRect(x,y,w,h)：绘制一个矩形的边框
+
+			// ctx.fillStyle = "rgba(0,0,200,0.5)";
+			// ctx.fillRect(30,30,55,50);
+
+			//绘制路径常用的方法：
+			// 1、beginPath():新建一条路径
+			//2、moveTo()：将画笔移动到指定的坐标(x,y)；
+			// 3、closePath()：闭合路径；
+			// 4、stroke():通过线条绘制图形轮廓
+			// 5、fill()：填充路径的内容
+
+			// 线段
+			ctx_1.beginPath();
+			ctx_1.moveTo(50,50);
+			ctx_1.lineTo(100,100);
+			ctx_1.closePath();
+			ctx_1.stroke();
+
+
+			// 三角形
+			var canvas_2 = document.getElementById("CanvasTwo");
+			if (!canvas_2.getContext) {return;}
+			var ctx_2 = canvas_2.getContext("2d");
+			ctx_2.beginPath();
+			ctx_2.moveTo(100,50);
+			ctx_2.lineTo(130,90);
+			ctx_2.lineTo(100,130);
+			ctx_2.closePath();
+			ctx_2.stroke();
+			ctx_2.fillStyle = "rgb(255,0,0)";
+			ctx_2.fill();
+
+			// 圆弧
+			var canvas_3 = document.getElementById("CanvasThree");
+			if (!canvas_3.getContext) {return;}
+			var ctx_3 = canvas_3.getContext("2d");
+			 ctx_3.beginPath();
+//arc(x, y, r, startAngle, endAngle, anticlockwise): 以(x, y) 为圆心，以r 为半径，从 
+//startAngle 弧度开始到endAngle弧度结束,false(顺时针)
+			 ctx_3.arc(50,50,40,0,Math.PI / 2	,false);
+			 ctx_3.stroke();
+			 // ctx_3.fill();
+		}
+		draw();
+	</script>
+	<script type="text/javascript">
+		$(function(){
+			var num = 0;
+			$("#yes").on("click",function(){
+				num = num + 10;
+				if (num >100) {
+					num = 100;
+				}else if (num >90) {
+
+				}
+				$("#myMeter").val(num);
+			});
+			$("#no").on("click",function(){
+				num -= 10;
+				if (num <10) {
+					num = 10;
+				}
+				$("#myMeter").val(num);
+			});
+		})
+	</script>
+	<script type="text/javascript">
+		$(function(){
+			var time = null;
+			var num = 0;
+			time = window.setInterval(function(){
+				num++;
+				if (num >= 100) {
+					clearInterval(time);
+					$("#loading").text("加载完成");
+				}
+				$("#fen").text(num);
+				$("progress").val(num);
+			},30);
+		})
+	</script>
+</body>
+</html>

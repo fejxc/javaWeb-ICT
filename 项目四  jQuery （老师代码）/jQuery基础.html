@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>jQuery基础</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="css/demo.css">
+	<link rel="stylesheet" type="text/css" href="plug/font-awesome/css/font-awesome.min.css">
+</head>
+<body>
+	<h2>1、阻止事件冒泡</h2>
+	<div class="wrapper">
+		<span class="bar">
+			<a href="#">good luck</a>
+		</span>
+	</div>
+
+	<h2>2、jQuery采用事件改变元素的样式</h2>
+	<img src="img/apple.jpg" id="appleImg" class="img-default"><br>
+	<button id="bigger">更大</button>
+	<button id="default">正常</button>
+	<button id="smaller">更小</button>
+
+	<h2>3、商品分类下拉菜单</h2>
+	<div>
+		<ul class="nav">
+			<li class="current">
+				<h4 class="title"><i class="fa fa-minus-square"></i><a href="javascript:void(0)">香水品牌</a></h4>
+				<ul>
+					<li><a href="javascript:void(0)">香奈儿</a></li>
+					<li><a href="javascript:void(0)">兰蔻</a></li>
+					<li><a href="javascript:void(0)">雅诗兰黛</a></li>
+				</ul>
+			</li>
+			<li>
+				<h4 class="title"><i class="fa fa-plus-square"></i><a href="javascript:void(0)">香水产地</a></h4>
+				<ul>
+					<li><a href="javascript:void(0)">中国大陆</a></li>
+					<li><a href="javascript:void(0)">法国</a></li>
+					<li><a href="javascript:void(0)">意大利</a></li>
+				</ul>
+			</li>
+			<li>
+				<h4 class="title"><i class="fa fa-plus-square"></i><a href="javascript:void(0)">香水分类</a></h4>
+				<ul>
+					<li><a href="javascript:void(0)">淡香水</a></li>
+					<li><a href="javascript:void(0)">古龙水</a></li>
+					<li><a href="javascript:void(0)">固体香水</a></li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+	<script type="text/javascript" src="js/jquery-3.1.1.js"></script>
+	<script type="text/javascript" src="js/demo.js"></script>
+</body>
+</html>
