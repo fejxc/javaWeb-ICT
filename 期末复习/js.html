@@ -5,9 +5,26 @@
     <title>js</title>
 </head>
 <body>
+<div>
+    <img src="https://gitee.com/fejxc/upic-file/raw/master/Users/sunyun/blog_pic /gIVKf3.png" id="apple">
+    <button onclick="changePic()">切换airpords</button>
+    <button onclick="changePicApple()">切换phone</button>
+</div>
+
 <script>
-    document.write("<h1>jsjsjsjsjs</h1>");
-    window.document.write("<h1>1234</h1>");
+    function changePic(){
+        var apple = document.getElementById("apple");
+        apple.setAttribute("src","https://gitee.com/fejxc/upic-file/raw/master/Users/sunyun/blog_pic /tuXjvm.png");
+    }
+    function changePicApple() {
+        var apple = document.getElementById("apple");
+        apple.setAttribute("src","https://gitee.com/fejxc/upic-file/raw/master/Users/sunyun/blog_pic /gIVKf3.png");
+    }
+
+</script>
+<script>
+    document.write("<h1>练习js</h1>");
+    window.document.write("<h1>javascript</h1>");
 </script>
 </body>
 </html>
