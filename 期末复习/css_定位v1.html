@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>css相对定位和绝对定位</title>
+</head>
+<style>
+    #boxA{
+        /*相对定位*/
+        position: relative;
+        top:50px;
+        left: 50px;
+    }
+    #boxB{
+        /*决定定位*/
+        position: absolute;
+        top:75px;
+        left: 125px;
+    }
+</style>
+<body>
+<div id="boxA" style="width: 400px;height: 300px;background-color: red;">A
+    <div id="boxB" style="width: 150px;height: 150px;background-color: yellow;">B</div>
+    <div id="boxC" style="width: 100px;height: 100px;background-color: blue;">C</div>
+</div>
+</body>
+</html>

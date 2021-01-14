@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery—库存</title>
+    <script type="text/javascript" src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+</head>
+<body>
+<div>
+    <span>购买数量:</span>
+    <a href="javascript:void(0)" id="minus"><b>-</b></a>
+    <input type="text" name="" value="1" id="num">
+    <a href="javascript:void(0)" id="plus"><b>+</b></a>
+    <em>(当前库存<strong class="max">5</strong> )</em>
+</div>
+    <script>
+        $(document).ready(function () {
+            //减小
+            $('#minus').on("click",function () {
+                var number = $("#num").val();
+                if(number > 1){
+                    number--;
+                    $("#num").val(number);
+                }
+            });
+
+            //增加
+            $("#plus").on("click",function () {
+                var number = $("#num").val();
+                var max = $(".max").html();
+                if(number < parseInt(max)){
+                    number++;
+                    $("#num").val(number);
+                }
+            });
+        })
+    </script>
+
+</body>
+</html>

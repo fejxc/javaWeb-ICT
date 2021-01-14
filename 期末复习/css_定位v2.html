@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>css定位v2</title>
+    <style>
+        #A{
+            /*A使用相对对象，相对浏览器的位置*/
+            border-radius: 25px;
+            position: relative;
+            top: 100px;
+            left: 50px;
+        }
+        #B{
+            /*B使用决定对味，以A作为父元素*/
+            position: absolute;
+            top: 50px;
+            left: 50px;
+        }
+        #C{
+            /*C使用固定定位，固定在浏览器的右下角*/
+            position: fixed;
+            bottom: 0px;
+            right: 0px;
+        }
+    </style>
+</head>
+<body>
+<div id="A" style="width: 500px;height: 500px;background-color: red;">A
+    <div id="B" style="width: 300px;height: 200px;background-color: yellow;">B</div>
+    <div id="C" style="background-color: blue;width: 300px;height: 200px;">C</div>
+</div>
+</body>
+</html>

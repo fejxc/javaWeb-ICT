@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Jquery动态列表</title>
+    <script type="text/javascript" src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+</head>
+<body>
+<ul id="nav">
+    <li id="1">男装</li>
+    <li>女1装</li>
+</ul>
+<!--type 默认属性是button reset submit-->
+<button type="button" id="add">添加</button>
+<button type="button" id="remove">删除</button>
+
+<script>
+    $(document).ready(function () {
+        $("#add").on('click',function () {
+            $("#nav").append("<li>童装</li>");
+            $("#nav").prepend("<li>女装</li>");
+            $("#nav").before("<li>运动装</li>");
+            $("#nav").after("<li>休闲装</li>");
+        });
+        $("#remove").on('click',function () {
+            $("#nav").empty();
+            //$("#nav").remove();
+        })
+    })
+</script>
+</body>
+</html>
